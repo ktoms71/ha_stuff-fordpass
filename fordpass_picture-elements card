@@ -1,0 +1,167 @@
+type: picture-elements
+elements:
+  - type: state-badge
+    entity: sensor.f250front_psi_left
+    attribute: friendly_name
+    tap_action:
+      action: none
+    style:
+      top: 15%
+      left: 17%
+      '--label-badge-red': black
+      text-align: center
+      font-size: .80em
+  - type: state-badge
+    entity: sensor.f250front_psi_right
+    attribute: friendly_name
+    tap_action:
+      action: none
+    style:
+      top: 16%
+      left: 83%
+      '--label-badge-red': black
+      text-align: center
+      font-size: .80em
+  - type: state-badge
+    entity: sensor.f250rear_psi_right
+    attribute: friendly_name
+    tap_action:
+      action: none
+    style:
+      top: 80%
+      left: 83%
+      '--label-badge-red': black
+      text-align: center
+      font-size: .80em
+      background-color: rgba(0,0,0,0)
+  - type: state-badge
+    entity: sensor.f250rear_psi_left
+    attribute: friendly_name
+    tap_action:
+      action: none
+    style:
+      top: 79%
+      left: 15%
+      '--label-badge-red': black
+      text-align: center
+      font-size: .80em
+      background-color: rgba(0,0,0,0)
+  - type: state-icon
+    entity: sensor.f250battery_voltage
+    icon: mdi:car-battery
+    attribute: friendly_name
+    tap_action:
+      action: none
+    style:
+      top: 7%
+      left: 40%
+      '--label-badge-red': black
+      text-align: center
+      font-size: 0.80em
+      background-color: rgba(0,0,0,0)
+  - type: state-label
+    entity: sensor.f250battery_voltage
+    icon: mdi:car-battery
+    tap_action:
+      action: none
+    style:
+      top: 10%
+      left: 40%
+      '--label-badge-red': black
+      text-align: center
+      font-size: 0.80em
+      background-color: rgba(0,0,0,0)
+  - type: state-icon
+    entity: sensor.f250oil_status
+    icon: mdi:oil
+    attribute: type
+    tap_action:
+      action: none
+    style:
+      top: 7%
+      left: 60%
+      '--label-badge-red': black
+      text-align: center
+      font-size: 0.80em
+      background-color: rgba(0,0,0,0)
+  - type: state-label
+    entity: sensor.f250oil_status
+    icon: mdi:oil
+    tap_action:
+      action: none
+    style:
+      top: 10%
+      left: 60%
+      '--label-badge-red': black
+      text-align: center
+      font-size: 0.80em
+      background-color: rgba(0,0,0,0)
+  - type: state-icon
+    entity: sensor.fordpass_ignitionstatus
+    tap_action:
+      action: none
+    style:
+      top: 24%
+      left: 40%
+      '--paper-item-icon-color': blue;
+      text-align: center
+      font-size: 0.80em
+      icon:
+        - color: green
+  - type: state-label
+    entity: sensor.f250oil_status
+    icon: mdi:oil
+    tap_action:
+      action: none
+    style:
+      top: 10%
+      left: 60%
+      '--label-badge-red': black
+      text-align: center
+      font-size: 0.80em
+      background-color: rgba(0,0,0,0)
+  - type: state-icon
+    entity: sensor.fordpass_fuel
+    icon: mdi:gas-station
+    style:
+      color: green
+      text-shadow: 0 0 7px
+      text-transform: capitalize
+      z-index: 1
+      top: 64.5%
+      left: 35%
+  - type: state-label
+    entity: sensor.fordpass_fuel
+    tap_action:
+      action: none
+    style:
+      text-align: center
+      font-size: 0.80em
+      background-color: rgba(0,0,0,0)
+      top: 63.5%
+      left: 41%
+  - type: state-label
+    entity: sensor.f250fuel_dte
+    tap_action:
+      action: none
+    style:
+      text-align: center
+      font-size: 0.80em
+      background-color: rgba(0,0,0,0)
+      top: 65.5%
+      left: 42%
+image: /local/f250/f250overhead.jpg
+style: |
+  ha-card {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    --tray_1_color: {{state_attr('sensor.x1c_00m09a370600754_ams_1_tray_1', 'color') }};
+    --tray_2_color: {{state_attr('sensor.x1c_00m09a370600754_ams_1_tray_2', 'color') }};
+    --tray_3_color: {{state_attr('sensor.x1c_00m09a370600754_ams_1_tray_3', 'color') }};
+    --tray_4_color: {{state_attr('sensor.x1c_00m09a370600754_ams_1_tray_4', 'color') }};
+    --tray_1_bg: {% if is_state_attr('sensor.x1c_00m09a370600754_ams_1_tray_1', 'active', true) %} rgba(255, 255, 126, 0.5); {% else %} rgba(0,0,0,0.5); {% endif %}
+    --tray_2_bg: {% if is_state_attr('sensor.x1c_00m09a370600754_ams_1_tray_2', 'active', true) %} rgba(255, 255, 126, 0.5); {% else %} rgba(0,0,0,0.5); {% endif %}
+    --tray_3_bg: {% if is_state_attr('sensor.x1c_00m09a370600754_ams_1_tray_3', 'active', true) %} rgba(255, 255, 126, 0.5); {% else %} rgba(0,0,0,0.5); {% endif %}
+    --tray_4_bg: {% if is_state_attr('sensor.x1c_00m09a370600754_ams_1_tray_4', 'active', true) %} rgba(255, 255, 126, 0.5); {% else %} rgba(0,0,0,0.5); {% endif %}
+  }
