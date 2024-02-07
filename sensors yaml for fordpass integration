@@ -1,0 +1,43 @@
+#FordPass Sensors 
+- platform: template
+  sensors:
+    f250front_psi_left:
+      value_template: "{{ state_attr('sensor.fordpass_tirepressure', 'FRONT_LEFT') }}"
+      friendly_name: "Front Left"
+      unit_of_measurement: "psi"
+    f250front_psi_right:
+      value_template: "{{ state_attr('sensor.fordpass_tirepressure', 'FRONT_RIGHT') }}"
+      friendly_name: "Front Right"
+      unit_of_measurement: "psi"
+    f250rear_psi_left:
+      value_template: "{{ state_attr('sensor.fordpass_tirepressure', 'REAR_LEFT') }}"
+      friendly_name: "Rear Left"
+      unit_of_measurement: "psi"
+    f250rear_psi_right:
+      value_template: "{{ state_attr('sensor.fordpass_tirepressure', 'REAR_RIGHT') }}"
+      friendly_name: "Rear Right"
+      unit_of_measurement: "psi"
+    
+    f250gps_lat:
+      value_template: "{{ state_attr('sensor.fordpass_gps', 'latitude') }}"
+    f250gps_longi:
+      value_template: "{{ state_attr('sensor.fordpass_gps', 'longitude') }}"
+    f250fuel_dte:
+      value_template: "{{ state_attr('sensor.fordpass_fuel', 'fuelRange') | round(2) }}"
+    f250battery_voltage:
+      value_template: "{{ state_attr('sensor.fordpass_battery', 'Battery Voltage') | round(2) }}"
+      friendly_name: "Battery"
+      unit_of_measurement: "V"
+
+    f250ignition_status:
+      value_template: "{{ state_attr('sensor.fordpass_ignitionstatus', 'value') }}"
+    f250oil_status:
+      value_template: "{{ state_attr('sensor.fordpass_oil', 'value') }}"
+      unit_of_measurement: "%"
+      friendly_name: "Oil"
+
+    trucklocation:
+      value_template: "{{ state_attr('sensor.fordpass_gps', 'status') }}"
+      attribute_templates:
+        latitude: "{{ state_attr('sensor.fordpass_gps', 'latitude') }}"
+        longitude: "{{ state_attr('sensor.fordpass_gps', 'longitude') }}"
